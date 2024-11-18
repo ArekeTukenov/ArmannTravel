@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArmanTRAVEL</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #e6f7ff, #cce7ff); /* Фон сайта */
+            color: #333;
+            min-height: 100vh;
+            transition: background 0.5s ease;
+        }
+
+        .page {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: auto;
+            padding: 20px;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin: 20px 0;
+            color: #003366;
+        }
+
+        .left-top-text {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-family: 'Georgia', serif;
+            font-size: 1.8em;
+            color: #ff4500;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .left-text, .right-container {
+            flex: 1;
+            max-width: 300px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+        }
+
+        .center-container {
+            flex: 2;
+            text-align: center;
+        }
+
+        .center-container img {
+            max-width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .center-container a, .center-container button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #ff4500;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .center-container button:hover, .center-container a:hover {
+            background-color: #e63e00;
+        }
+
+        .fullscreen-map img {
+            width: 100%;
+            height: calc(100vh - 100px);
+            object-fit: cover;
+        }
+
+        .fullscreen-map button {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <!-- Страница 1 -->
+    <div class="page active" id="page1">
+        <div class="left-top-text">ArmanTRAVEL</div>
+        <h1>Добро пожаловать в ArmanTRAVEL</h1>
+        <div class="content">
+            <!-- Левый текст -->
+            <div class="left-text">
+                Добро пожаловать на наш сайт. Здесь вы можете выбрать тур в любой из городов Казахстана. Чтобы выбрать, достаточно навести курсор мыши на город, который вы хотите посетить. Хорошей поездки!
+            </div>
+
+            <!-- Центральный контейнер -->
+            <div class="center-container">
+                <img src="https://www.gov.kz/uploads/2023/2/16/576e146771000288a81879b79754c185_original.93083.jpg" alt="Центральный скриншот">
+                <button onclick="showPage('page2')">Перейти к карте</button>
+            </div>
+
+            <!-- Правый контейнер -->
+            <div class="right-container">
+                <img src="https://avatars.mds.yandex.net/i?id=48b3291373941e1eae6626d9ae0a34af_l-4298658-images-thumbs&n=13" alt="Ваш скриншот">
+                <p>В данной странице вы можете выбрать любой город.То есть Авиабилеты Ж/д билеты Автобусы Заказ гостиниц Электрички Туры .</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Страница 2 -->
+    <div class="page" id="page2">
+        <div class="fullscreen-map">
+            <<map name="map1">
+	<area shape="CIRCLE" coords="588,360,66" href="https://astana.citypass.kz/ru/2022/07/05/privet-kosmosu-chem-udivit-turistov-zhezkazgan/" title="Жезказган" />
+	<area shape="CIRCLE" coords="182,225,50" href="https://visit-uralsk.kz/ru/parki-i-zona-otdykha" title="Орал" />
+	<area shape="CIRCLE" coords="185,336,35" href="https://vestikavkaza.ru/articles/cto-nuzno-znat-ob-otdyhe-v-atyrau.html" title="Атырау" />
+	<area shape="CIRCLE" coords="231,457,38" href="https://www.tutu.ru/geo/kazahstan/kurort/aktau/" title="Актау" />
+	<area shape="CIRCLE" coords="373,263,48" href="https://www.tutu.ru/geo/kazahstan/kurort/aktobe/" title="Актобе" />
+	<area shape="CIRCLE" coords="496,461,34" href="https://ostrovok.ru/hotel/kazakhstan/kyzylorda/otdykh/" title="Кызылорда" />
+	<area shape="CIRCLE" coords="521,137,47" href="https://www.tutu.ru/geo/kazahstan/kurort/kostanay/" title="Костанай" />
+	<area shape="CIRCLE" coords="597,45,46" href="https://www.nur.kz/leisure/tourist-routes/1750859-gorod-petropavlovsk-dostoprimecatelnosti/" title="Петропавл" />
+	<area shape="CIRCLE" coords="556,163,59" href="https://www.tutu.ru/geo/kazahstan/kurort/astana/" title="Астана" />
+	<area shape="CIRCLE" coords="864,172,48" href="https://www.tutu.ru/geo/kazahstan/kurort/pavlodar/" title="Павлодар" />
+	<area shape="CIRCLE" coords="720,273,59" href="https://www.tutu.ru/geo/kazahstan/kurort/karaganda/" title="Караганды" />
+	<area shape="CIRCLE" coords="637,544,47" href="https://www.tutu.ru/geo/kazahstan/kurort/shymkent/" title="Шымкент" />
+	<area shape="CIRCLE" coords="748,475,27" href="https://www.inform.kz/ru/gde-otdohnut-v-zhambylskoy-oblasti_a4072449" title="Тараз" />
+	<area shape="CIRCLE" coords="1077,289,66" href="https://www.tutu.ru/geo/kazahstan/kurort/ust_kamenogorsk/" title="Оскемен" />
+	<area shape="CIRCLE" coords="869,414,67" href="https://www.tutu.ru/geo/kazahstan/kurort/alma_ata/" title="Алматы" />
+</map>
+<img src="D:\Загрузки\f.png" usemap="#map1" border="0" />
+" alt="Карта">
+            <button onclick="showPage('page1')">Назад на главную</button>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
